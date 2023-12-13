@@ -1,9 +1,10 @@
 import './App.css';
+import BackgroundsHome from './components/BackgroundsHome/BackgroundsHome';
 
 function App() {
   return (
     <div className="App">
-      <h2>Probando</h2>
+      <BackgroundsHome />
     </div>
   );
 }
