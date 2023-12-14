@@ -1,12 +1,11 @@
 import React from 'react'
 import './BackgroundsHome.css'
 import { useEffect, useState } from 'react'
-import fondo_home_1 from '../../assets/images/fondo_home_1.jpeg'
 import fondo_home_2 from '../../assets/images/fondo_home_2.jpeg'
 import fondo_home_3 from '../../assets/images/fondo_home_3.jpeg'
 
 export default function BackgroundsHome() {
-    const images_background = [fondo_home_2, fondo_home_3, fondo_home_1];
+    const images_background = [fondo_home_2, fondo_home_3,];
     let [indexImage, setIndexImage] = useState(0);
 
 
@@ -31,7 +30,6 @@ export default function BackgroundsHome() {
     return (
         <div id='containerPrincipal-BackgroundsHome'>
             {renderImage(indexImage)}
-            <h2 id='tituloOwnExpenses'>Own Expenses</h2>
         </div>
     )
 }

@@ -1,0 +1,20 @@
+@media screen and (min-width: 360px) {
+  #tituloOwnExpenses {
+    background-color: rgba(0, 0, 0, 0.904);
+    color: white;
+    display: inline;
+    padding: 10px;
+    position: absolute;
+    width: 11em;
+    border-radius: 0px 13px 13px 0px;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5rem;
+  }
+
+  #tituloOwnExpenses:hover {
+    width: 100%;
+    transition: all 1s ease-in-out;
+  }
+}
