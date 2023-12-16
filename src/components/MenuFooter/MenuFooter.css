@@ -1,0 +1,64 @@
+@media screen and (min-width: 360px) {
+  #contenedor-general_MenuFooter {
+    /* border: 2px solid lightcoral; */
+    position: fixed;
+    margin-top: 83vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #subcontenedor-botones__MenuFooter {
+    /* border: 2px solid greenyellow; */
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.903);
+    backdrop-filter: blur(10px);
+    width: 85%;
+    border-radius: 30px;
+  }
+
+  .contenedores-botones_MenuFooter {
+    /* border: 2px solid red; */
+    height: 5rem;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+  }
+
+  .icono-rest-add__MenuFooter {
+    color: white;
+  }
+}
+
+/* 414px - Iphone 11 */
+
+@media screen and (min-width: 414px) {
+    #contenedor-general_MenuFooter {
+      /* border: 2px solid lightcoral; */
+      margin-top: 83vh;
+    }
+  
+    #subcontenedor-botones__MenuFooter {
+      /* border: 2px solid greenyellow; */
+      width: 85%;
+      border-radius: 30px;
+    }
+  
+    .contenedores-botones_MenuFooter {
+      /* border: 2px solid red; */
+      height: 5.5rem;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.7rem;
+    }
+  
+    .icono-rest-add__MenuFooter {
+      color: white;
+    }
+  }
+  
