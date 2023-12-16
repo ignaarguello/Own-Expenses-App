@@ -1,0 +1,22 @@
+@media screen and (min-width: 360px) {
+  #contenedor-general-counter {
+    /* border: 2px solid blueviolet; */
+    position: absolute;
+    margin-top: 22rem;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+  }
+
+  #texto-counter{
+      /* border: 2px solid greenyellow; */
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.911);
+      backdrop-filter: blur(7px);
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 700;
+      padding: 1rem 2rem;
+  }
+}

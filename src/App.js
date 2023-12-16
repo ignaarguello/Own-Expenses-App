@@ -2,6 +2,7 @@ import './App.css';
 import BackgroundsHome from './components/BackgroundsHome/BackgroundsHome';
 import TituloExpenses from './components/TituloExpenses/TituloExpenses';
 import GridMenuHome from './components/GridMenuHome/GridMenuHome';
+import Counter from './components/Counter/Counter';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <TituloExpenses />
       <GridMenuHome />
+      <Counter />
       <BackgroundsHome />
     </div>
   );

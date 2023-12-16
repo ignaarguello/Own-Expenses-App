@@ -3,8 +3,9 @@ import './TituloExpenses.css'
 
 export default function TituloExpenses() {
     return (
-        <div>
+        <div id='contenedor-tituloExpenses'>
             <h2 id='tituloOwnExpenses'>Own Expenses</h2>
         </div>
     )
 }
+
