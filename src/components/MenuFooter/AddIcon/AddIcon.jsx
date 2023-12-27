@@ -11,18 +11,37 @@ import Typography from '@mui/material/Typography';
 
 //Import del Input de Material UI
 import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const style = {
     position: 'absolute',
-    top: '70%',
+    top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 310,
+    width: '80%',
     bgcolor: 'background.paper',
     borderRadius: '20px',
     boxShadow: 24,
     p: 4,
 };
+
+//Variable con los datos para el select
+const Items_Select = [
+    {
+        value: 'Combustible',
+        label: 'Combustible',
+    },
+    {
+        value: 'Inversiones',
+        label: 'Inversiones',
+    },
+    {
+        value: 'Otros Gastos',
+        label: 'Otros Gastos',
+    },
+]
 
 
 export default function AddIcon() {
@@ -53,19 +72,43 @@ export default function AddIcon() {
                         <Typography id="transition-modal-title" variant="h6" component="h2" align='center'>
                             Ingreso de Importe
                         </Typography>
-                        {/* Box del input del Modal */}
+                        {/* Box del Input del Modal */}
                         <Box
                             component="form"
                             sx={{
-                                '& > :not(style)': { m: 1, width: '25ch' },
+                                '& > :not(style)': { m: 1, width: '100%' },
                             }}
                             noValidate
                             autoComplete="off"
                         >
                             <TextField id="standard-basic" label="Importe" variant="standard" />
+                            <TextField
+                                id="outlined-select-currency"
+                                select
+                                label="Calificación"
+                                defaultValue="EUR"
+                                helperText="Marque la calificación de su gasto"
+                                sx={{
+                                    width: '100%',
+                                }}
+                            >
+                                {Items_Select.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
                         </Box>
+                        {/* Box de los Botones */}
+                        <Stack direction="row" spacing={2} justifyContent='center' sx={{ mt: '1rem' }}>
+                            <Button variant="contained" color="success">
+                                Success
+                            </Button>
+                            <Button variant="outlined" color="error">
+                                Error
+                            </Button>
+                        </Stack>
                     </Box>
-                    {/* Box del Input del Modal */}
                 </Fade>
             </Modal>
         </>
