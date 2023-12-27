@@ -81,7 +81,7 @@ export default function AddIcon() {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField id="standard-basic" label="Importe" variant="standard" inputMode="phone" />
+                            <TextField id="standard-basic" label="Importe" variant="standard" type="number" />
                             <TextField
                                 id="outlined-select-currency"
                                 select
