@@ -30,16 +30,16 @@ const style = {
 //Variable con los datos para el select
 const Items_Select = [
     {
-        value: 'Combustible',
-        label: 'Combustible',
+        value: 'Inversión',
+        label: 'Inversión',
     },
     {
-        value: 'Inversiones',
-        label: 'Inversiones',
+        value: 'Viajes',
+        label: 'Viajes',
     },
     {
-        value: 'Otros Gastos',
-        label: 'Otros Gastos',
+        value: 'Ventas',
+        label: 'Ventas',
     },
 ]
 
@@ -81,7 +81,7 @@ export default function AddIcon() {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField id="standard-basic" label="Importe" variant="standard" />
+                            <TextField id="standard-basic" label="Importe" variant="standard" inputMode="phone" />
                             <TextField
                                 id="outlined-select-currency"
                                 select
@@ -102,10 +102,10 @@ export default function AddIcon() {
                         {/* Box de los Botones */}
                         <Stack direction="row" spacing={2} justifyContent='center' sx={{ mt: '1rem' }}>
                             <Button variant="contained" color="success">
-                                Success
+                                Confirmar
                             </Button>
                             <Button variant="outlined" color="error">
-                                Error
+                                Cancelar
                             </Button>
                         </Stack>
                     </Box>
