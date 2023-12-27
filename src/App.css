@@ -9,4 +9,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-image: url(./assets/images/fondo_home_3.jpeg);
+  background-size: cover;
 }
