@@ -1,6 +1,7 @@
 import React from 'react'
 import './MenuFooter.css'
-import { RiSubtractFill } from "react-icons/ri";
+import SubtractIcon from './SubtractIcon/SubtractIcon';
+
 
 //Importamos los iconos
 import AddIcon from './AddIcon/AddIcon';
@@ -13,7 +14,7 @@ export default function MenuFooter() {
                     <AddIcon />
                 </div>
                 <div className="contenedores-botones_MenuFooter">
-                    <RiSubtractFill className='icono-rest-add__MenuFooter' />
+                    <SubtractIcon />
                 </div>
             </div>
         </div>

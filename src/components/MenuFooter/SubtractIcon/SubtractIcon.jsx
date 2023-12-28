@@ -1,7 +1,9 @@
-import './AddIcon.css'
-import { IoMdAdd } from "react-icons/io";
+import { RiSubtractFill } from "react-icons/ri";
 
-//Importaciones del modal de Material UI 
+import RemoveIcon from '@mui/icons-material/Remove';
+import CloseIcon from '@mui/icons-material/Close';
+
+// Importaciones del modal de Material UI 
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
@@ -9,12 +11,15 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 
-//Import del Input de Material UI
+// Hooks
+import { useRef } from 'react'
+
+// Import del Input de Material UI
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 
+// Variable de estilos del modal
 const style = {
     position: 'absolute',
     top: '50%',
@@ -27,31 +32,49 @@ const style = {
     p: 4,
 };
 
-//Variable con los datos para el select
+// Variable con los datos para el select
 const Items_Select = [
     {
-        value: 'Inversión',
-        label: 'Inversión',
+        value: 'Combustible',
+        label: 'Combustible',
     },
     {
-        value: 'Viajes',
-        label: 'Viajes',
+        value: 'Salidas',
+        label: 'Salidas',
     },
     {
-        value: 'Ventas',
-        label: 'Ventas',
+        value: 'Mercado',
+        label: 'Mercado',
+    },
+    {
+        value: 'Inversiones',
+        label: 'Inversiones',
     },
 ]
 
 
-export default function AddIcon() {
+
+export default function SubtractIcon() {
+    // Variable encargada de enviar el nuevo dato de resta al LocalStorage / Creada como un objeto
+    const importeRef = useRef()
+    const calificacionRef = useRef()
+
+
+    const datoSubtract_LocalStorage = {
+        importe: importeRef,
+        calificacion: calificacionRef,
+    }
+
+
+
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (
         <>
-            <IoMdAdd className='icono-rest-add__MenuFooter' onClick={handleOpen} />
+            <RiSubtractFill className='icono-rest-add__MenuFooter' onClick={handleOpen} />
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -70,7 +93,7 @@ export default function AddIcon() {
                     {/* Box del contenido del Modal */}
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" align='center'>
-                            Importe a Sumar
+                            Importe a Restar
                         </Typography>
                         {/* Box del Input del Modal */}
                         <Box
@@ -81,7 +104,7 @@ export default function AddIcon() {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField id="standard-basic" label="$" variant="standard" type="number" />
+                            <TextField id="standard-basic" label="$" variant="standard" type="number" ref={importeRef} />
                             <TextField
                                 id="outlined-select-currency"
                                 select
@@ -91,6 +114,7 @@ export default function AddIcon() {
                                 sx={{
                                     width: '100%',
                                 }}
+                                ref={calificacionRef}
                             >
                                 {Items_Select.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -100,13 +124,11 @@ export default function AddIcon() {
                             </TextField>
                         </Box>
                         {/* Box de los Botones */}
-                        <Stack direction="row" spacing={2} justifyContent='center' sx={{ mt: '1rem' }}>
-                            <Button variant="contained" color="success" onClick={() => alert('Importe Sumado')}>
-                                Confirmar
-                            </Button>
-                            <Button variant="outlined" color="error" onClick={handleClose}>
-                                Cancelar
-                            </Button>
+                        <Stack direction="row" spacing={8} justifyContent='center' sx={{ mt: '2rem' }}>
+                            {/* Icono Subtract */}
+                            <RemoveIcon onClick={() => console.log(datoSubtract_LocalStorage)} />
+                            {/* Icono Cerrar */}
+                            <CloseIcon />
                         </Stack>
                     </Box>
                 </Fade>
