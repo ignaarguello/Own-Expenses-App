@@ -1,5 +1,6 @@
 import { RiSubtractFill } from "react-icons/ri";
 
+
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -12,12 +13,15 @@ import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 
 // Hooks
-import { useRef } from 'react'
+import { useState } from 'react'
 
 // Import del Input de Material UI
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
+
+//Import del Alert de SweetAlert
+import alert_notification from '../AlertConfirm/AlertConfirm'
 
 // Variable de estilos del modal
 const style = {
@@ -55,22 +59,28 @@ const Items_Select = [
 
 
 export default function SubtractIcon() {
-    // Variable encargada de enviar el nuevo dato de resta al LocalStorage / Creada como un objeto
-    const importeRef = useRef()
-    const calificacionRef = useRef()
-
-
-    const datoSubtract_LocalStorage = {
-        importe: importeRef,
-        calificacion: calificacionRef,
-    }
-
-
-
-
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    //Logica del componente
+    const [valueImporte, setValueImporte] = useState("")
+    const [valueCalificacion, setValueCalificacion] = useState("")
+
+    let dataInputs = {
+        importe: valueImporte,
+        calificacion: valueCalificacion,
+    }
+
+    const callbackReset = () => {
+        setValueImporte("")
+        setValueCalificacion("")
+    }
+
+    const subtractFunction = () => {
+        handleClose()
+        alert_notification('¿Confirmar Operación?', 'success', callbackReset, handleOpen)
+    }
 
     return (
         <>
@@ -104,17 +114,17 @@ export default function SubtractIcon() {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField id="standard-basic" label="$" variant="standard" type="number" ref={importeRef} />
+                            <TextField id="standard-basic" label="$" variant="standard" type="number" onChange={(e) => setValueImporte(e.target.value)} value={valueImporte} />
                             <TextField
                                 id="outlined-select-currency"
                                 select
-                                label="Calificación"
+                                label={valueCalificacion || 'Calificación'}
                                 defaultValue=""
                                 helperText="Marque la calificación de su gasto"
                                 sx={{
                                     width: '100%',
                                 }}
-                                ref={calificacionRef}
+                                onBlur={(e) => setValueCalificacion(e.target.value)}
                             >
                                 {Items_Select.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -126,7 +136,7 @@ export default function SubtractIcon() {
                         {/* Box de los Botones */}
                         <Stack direction="row" spacing={8} justifyContent='center' sx={{ mt: '2rem' }}>
                             {/* Icono Subtract */}
-                            <RemoveIcon onClick={() => console.log(datoSubtract_LocalStorage)} />
+                            <RemoveIcon onClick={subtractFunction} />
                             {/* Icono Cerrar */}
                             <CloseIcon />
                         </Stack>
