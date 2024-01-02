@@ -1,5 +1,8 @@
-import './AddIcon.css'
+//Iconos
 import { IoMdAdd } from "react-icons/io";
+
+//Iconos para Sumar y Cerrar - Modal
+import CloseIcon from '@mui/icons-material/Close';
 
 //Importaciones del modal de Material UI 
 import * as React from 'react';
@@ -13,7 +16,13 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
+// Hooks
+import { useState } from 'react'
+
+
+//Import del Alert de SweetAlert
+import alert_notification from '../AlertConfirm/AlertConfirm'
 
 const style = {
     position: 'absolute',
@@ -26,6 +35,16 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
+
+//Variable de estilos de icono de Suma y Close - Modal
+const estilos_icono_suma = {
+    color: 'green',
+    fontSize: '2rem'
+}
+
+const estilos_icono_close = {
+    fontSize: '2rem'
+}
 
 //Variable con los datos para el select
 const Items_Select = [
@@ -48,6 +67,21 @@ export default function AddIcon() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    //Logica del componente
+    const [valueImporte, setValueImporte] = useState("")
+    const [valueCalificacion, setValueCalificacion] = useState("")
+
+
+    const callbackReset = () => {
+        setValueImporte("")
+        setValueCalificacion("")
+    }
+
+    const addFunction = () => {
+        handleClose()
+        alert_notification('¿Confirmar Operación?', 'success', callbackReset, handleOpen)
+    }
 
     return (
         <>
@@ -81,16 +115,17 @@ export default function AddIcon() {
                             noValidate
                             autoComplete="off"
                         >
-                            <TextField id="standard-basic" label="$" variant="standard" type="number" />
+                            <TextField id="standard-basic" label="$" variant="standard" type="number" onChange={(e) => setValueImporte(e.target.value)} value={valueImporte} />
                             <TextField
                                 id="outlined-select-currency"
                                 select
-                                label="Calificación"
+                                label={valueCalificacion || 'Calificación'}
                                 defaultValue=""
                                 helperText="Marque la calificación de su gasto"
                                 sx={{
                                     width: '100%',
                                 }}
+                                onBlur={(e) => setValueCalificacion(e.target.value)}
                             >
                                 {Items_Select.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -100,13 +135,11 @@ export default function AddIcon() {
                             </TextField>
                         </Box>
                         {/* Box de los Botones */}
-                        <Stack direction="row" spacing={2} justifyContent='center' sx={{ mt: '1rem' }}>
-                            <Button variant="contained" color="success" onClick={() => alert('Importe Sumado')}>
-                                Confirmar
-                            </Button>
-                            <Button variant="outlined" color="error" onClick={handleClose}>
-                                Cancelar
-                            </Button>
+                        <Stack direction="row" spacing={8} justifyContent='center' sx={{ mt: '2rem' }}>
+                            {/* Icono Sumar */}
+                            <IoMdAdd onClick={addFunction} style={estilos_icono_suma} />
+                            {/* Icono Cerrar */}
+                            <CloseIcon style={estilos_icono_close} />
                         </Stack>
                     </Box>
                 </Fade>

@@ -1,6 +1,6 @@
 import { RiSubtractFill } from "react-icons/ri";
 
-
+// Iconos de Restar y Cerrar - Modal
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -35,6 +35,16 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
+
+//Variable de estilos de icono de Resta y Close - Modal
+const estilos_icono_resta = {
+    color: 'red',
+    fontSize: '2rem'
+}
+
+const estilos_icono_close = {
+    fontSize: '2rem'
+}
 
 // Variable con los datos para el select
 const Items_Select = [
@@ -136,9 +146,9 @@ export default function SubtractIcon() {
                         {/* Box de los Botones */}
                         <Stack direction="row" spacing={8} justifyContent='center' sx={{ mt: '2rem' }}>
                             {/* Icono Subtract */}
-                            <RemoveIcon onClick={subtractFunction} />
+                            <RemoveIcon onClick={subtractFunction} style={estilos_icono_resta} />
                             {/* Icono Cerrar */}
-                            <CloseIcon />
+                            <CloseIcon style={estilos_icono_close} />
                         </Stack>
                     </Box>
                 </Fade>

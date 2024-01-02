@@ -4,7 +4,9 @@ import GridMenuHome from './components/GridMenuHome/GridMenuHome';
 import Counter from './components/Counter/Counter';
 import MenuFooter from './components/MenuFooter/MenuFooter';
 
+
 function App() {
+
   return (
     <div className="App">
       <TituloExpenses />
