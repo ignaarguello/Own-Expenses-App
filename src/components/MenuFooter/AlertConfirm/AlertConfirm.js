@@ -3,13 +3,13 @@ import Swal from 'sweetalert2'
 const alert_notification = (title, icon, callback, callback2) => {
     Swal.fire({
         text: title,
-        icon: icon,
+        icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "Confirmar",
         cancelButtonText: "Cancelar",
-    }).then((result) => {
+    },).then((result) => {
         if (result.isConfirmed) {
             Swal.fire({
                 text: "Operacion Realizada con Exito",
@@ -18,7 +18,7 @@ const alert_notification = (title, icon, callback, callback2) => {
             callback()
             setTimeout(() => {
                 window.location.reload();
-            }, 3000)
+            }, 2000)
         }
         else {
             callback2()

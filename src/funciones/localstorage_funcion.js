@@ -1,3 +1,5 @@
+import { sweetAlertDenied } from './sweetAlert_denied'
+
 export function obtener_data_localstorage(data) {
     let localstorage_data = localStorage.getItem('movimientos')
     let dataFrom_localstorage = JSON.parse(localstorage_data)
@@ -23,7 +25,10 @@ export function restar_capital_localstorage(value) {
         arrayToLocalStorage.push(String(valor_subtract));
         localStorage.setItem('dinero_total', JSON.stringify(arrayToLocalStorage));
     } else {
-        alert('Valor a restar mayor al capital neto o el capital neto es igual o menor a cero. No se puede realizar esta acción.');
+        sweetAlertDenied()
+        setTimeout(() => {
+            window.location.reload()
+        },5000)
     }
 }
 
