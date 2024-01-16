@@ -10,6 +10,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-image: url(https://marketplace.canva.com/MADGx5avvSA/4/screen_2x/canva-beach-at-sunset-MADGx5avvSA.jpg);
-  background-size: cover;
+  /* background-image: url(https://marketplace.canva.com/MADGx5avvSA/4/screen_2x/canva-beach-at-sunset-MADGx5avvSA.jpg);
+  background-size: cover; */
 }
