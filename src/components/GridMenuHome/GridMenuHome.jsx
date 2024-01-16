@@ -1,6 +1,9 @@
 import React from 'react'
 import './GridMenuHome.css'
 
+//Importacion de la funcion encargada de restar el localstorage
+import { reiniciar_local_storage } from '../../funciones/localstorage_funcion';
+
 /* Iconos */
 import { MdAddCircleOutline } from "react-icons/md";
 import { IoStatsChartSharp } from "react-icons/io5";
@@ -20,7 +23,7 @@ export default function GridMenuHome() {
             </div>
             {/* Contenedor Horizontal - Derecho */}
             <div id="contenedor-horizontal-derecho_gridMenuHome">
-                <MdOutlineRestartAlt className='icon-menuGridHome icon-restart_menuGridHome' onClick={() => alert('Action reload')} />
+                <MdOutlineRestartAlt className='icon-menuGridHome icon-restart_menuGridHome' onClick={reiniciar_local_storage} />
             </div>
         </div>
     )

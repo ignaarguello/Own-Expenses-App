@@ -1,4 +1,5 @@
 import { sweetAlertDenied } from './sweetAlert_denied'
+import { sweetAlertRestart } from './sweetAlert_restart'
 
 export function obtener_data_localstorage(data) {
     let localstorage_data = localStorage.getItem('movimientos')
@@ -28,7 +29,16 @@ export function restar_capital_localstorage(value) {
         sweetAlertDenied()
         setTimeout(() => {
             window.location.reload()
-        },5000)
+        }, 5000)
     }
+}
+
+export function reiniciar_local_storage() {
+    let capital_localstorage = localStorage.getItem('dinero_total');
+    localStorage.removeItem("dinero_total");
+    let arrayToLocalStorage = [];
+    arrayToLocalStorage.push(0)
+    localStorage.setItem('dinero_total', JSON.stringify(arrayToLocalStorage))
+    sweetAlertRestart()
 }
 
