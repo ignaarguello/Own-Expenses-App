@@ -23,6 +23,9 @@ import Stack from '@mui/material/Stack';
 //Import del Alert de SweetAlert
 import alert_notification from '../AlertConfirm/AlertConfirm'
 
+// Importacion de funcion encargada de enviar datos a localstorage
+import { obtener_data_localstorage, modificar_capital_localstorage } from "../../../funciones/localstorage_funcion";
+
 // Variable de estilos del modal
 const style = {
     position: 'absolute',
@@ -85,6 +88,7 @@ export default function SubtractIcon() {
     const callbackReset = () => {
         setValueImporte("")
         setValueCalificacion("")
+        obtener_data_localstorage(dataInputs)
     }
 
     const subtractFunction = () => {

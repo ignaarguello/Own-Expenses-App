@@ -16,6 +16,7 @@ const alert_notification = (title, icon, callback, callback2) => {
                 icon: "success"
             });
             callback()
+            window.location.reload();
         }
         else{
             callback2()

@@ -2,6 +2,7 @@
 
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+
 .App {
   /* border: 2px solid red; */
   height: 100vh;
@@ -9,6 +10,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-image: url(./assets/images/fondo_home_3.jpeg);
+  background-image: url(https://marketplace.canva.com/MADGx5avvSA/4/screen_2x/canva-beach-at-sunset-MADGx5avvSA.jpg);
   background-size: cover;
 }

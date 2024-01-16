@@ -20,9 +20,11 @@ import Stack from '@mui/material/Stack';
 // Hooks
 import { useState } from 'react'
 
-
 //Import del Alert de SweetAlert
 import alert_notification from '../AlertConfirm/AlertConfirm'
+
+// Importacion de funcion encargada de enviar datos a localstorage
+import { obtener_data_localstorage, modificar_capital_localstorage  } from "../../../funciones/localstorage_funcion";
 
 const style = {
     position: 'absolute',
@@ -72,10 +74,16 @@ export default function AddIcon() {
     const [valueImporte, setValueImporte] = useState("")
     const [valueCalificacion, setValueCalificacion] = useState("")
 
+    let dataInputs = {
+        importe: valueImporte,
+        calificacion: valueCalificacion,
+    }
 
     const callbackReset = () => {
         setValueImporte("")
         setValueCalificacion("")
+        obtener_data_localstorage(dataInputs)
+        modificar_capital_localstorage(dataInputs.importe)
     }
 
     const addFunction = () => {
