@@ -21,5 +21,17 @@
     width: 100%;
     transition: all 0.7s ease;
     border-radius: 1px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  #contenedor-tituloExpenses {
+    margin-top: 3rem;
+  }
+
+  #tituloOwnExpenses {
+    background-color: rgba(0, 0, 0, 0.750);
+    padding: 12px;
   }
 }

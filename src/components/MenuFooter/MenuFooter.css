@@ -38,12 +38,12 @@
 @media screen and (min-width: 414px) {
     #contenedor-general_MenuFooter {
       /* border: 2px solid lightcoral; */
-      margin-top: 83vh;
+      margin-top: 84vh;
     }
   
     #subcontenedor-botones__MenuFooter {
       /* border: 2px solid greenyellow; */
-      width: 85%;
+      width: 87%;
       border-radius: 30px;
     }
   
