@@ -24,7 +24,7 @@ import Stack from '@mui/material/Stack';
 import alert_notification from '../AlertConfirm/AlertConfirm'
 
 // Importacion de funcion encargada de enviar datos a localstorage
-import { obtener_data_localstorage, modificar_capital_localstorage } from "../../../funciones/localstorage_funcion";
+import { obtener_data_localstorage, modificar_capital_localstorage, restar_capital_localstorage } from "../../../funciones/localstorage_funcion";
 
 // Variable de estilos del modal
 const style = {
@@ -89,6 +89,7 @@ export default function SubtractIcon() {
         setValueImporte("")
         setValueCalificacion("")
         obtener_data_localstorage(dataInputs)
+        restar_capital_localstorage(dataInputs.importe)
     }
 
     const subtractFunction = () => {
