@@ -90,6 +90,8 @@ export default function SubtractIcon() {
         setValueCalificacion("")
         obtener_data_localstorage(dataInputs)
         restar_capital_localstorage(dataInputs.importe)
+
+        /* Aca modificar el estado global con redux o context */
     }
 
     const subtractFunction = () => {

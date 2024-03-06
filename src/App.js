@@ -1,9 +1,16 @@
 import './App.css';
+
+/* Componentes */
 import TituloExpenses from './components/TituloExpenses/TituloExpenses';
 import GridMenuHome from './components/GridMenuHome/GridMenuHome';
 import Counter from './components/Counter/Counter';
 import MenuFooter from './components/MenuFooter/MenuFooter';
+import LastMovement from './components/LastMovement/LastMovement';
+
+/* Hooks */
 import { useEffect, useState } from 'react';
+
+/* Data General */
 import { images_array } from './data/images_background_data';
 
 
@@ -43,6 +50,7 @@ function App() {
       <TituloExpenses />
       <GridMenuHome />
       <Counter />
+      <LastMovement />
       <MenuFooter />
     </div>
   );

@@ -24,7 +24,7 @@ import { useState } from 'react'
 import alert_notification from '../AlertConfirm/AlertConfirm'
 
 // Importacion de funcion encargada de enviar datos a localstorage
-import { obtener_data_localstorage, modificar_capital_localstorage  } from "../../../funciones/localstorage_funcion";
+import { obtener_data_localstorage, modificar_capital_localstorage } from "../../../funciones/localstorage_funcion";
 
 const style = {
     position: 'absolute',
@@ -62,6 +62,10 @@ const Items_Select = [
         value: 'Ventas',
         label: 'Ventas',
     },
+    {
+        value: 'Otros',
+        label: 'Otros',
+    },
 ]
 
 
@@ -84,6 +88,8 @@ export default function AddIcon() {
         setValueCalificacion("")
         obtener_data_localstorage(dataInputs)
         modificar_capital_localstorage(dataInputs.importe)
+
+        /* Aca modificar el estado global con context o redux */
     }
 
     const addFunction = () => {
