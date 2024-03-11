@@ -1,10 +1,10 @@
-//Iconos
+// Iconos
 import { IoMdAdd } from "react-icons/io";
 
-//Iconos para Sumar y Cerrar - Modal
+// Iconos para Sumar y Cerrar - Modal
 import CloseIcon from '@mui/icons-material/Close';
 
-//Importaciones del modal de Material UI 
+// Import del modal de Material UI 
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
@@ -12,7 +12,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 
-//Import del Input de Material UI
+// Import del Input de Material UI
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Stack from '@mui/material/Stack';
@@ -20,11 +20,14 @@ import Stack from '@mui/material/Stack';
 // Hooks
 import { useState } from 'react'
 
-//Import del Alert de SweetAlert
+// Import del Alert de SweetAlert
 import alert_notification from '../AlertConfirm/AlertConfirm'
 
-// Importacion de funcion encargada de enviar datos a localstorage
+// Import de funcion encargada de enviar datos a localstorage
 import { obtener_data_localstorage, modificar_capital_localstorage } from "../../../funciones/localstorage_funcion";
+
+// Import de las funciones date para ultimo movimientos
+import { setDateLastMovement } from '../../../funciones/date_localstorage'
 
 const style = {
     position: 'absolute',
@@ -88,8 +91,9 @@ export default function AddIcon() {
         setValueCalificacion("")
         obtener_data_localstorage(dataInputs)
         modificar_capital_localstorage(dataInputs.importe)
-
-        /* Aca modificar el estado global con context o redux */
+        
+        //Funcion que setea el ultimo movimiento 
+        setDateLastMovement()
     }
 
     const addFunction = () => {

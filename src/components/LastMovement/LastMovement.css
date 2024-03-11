@@ -1,6 +1,24 @@
-@media screen and (min-width: 414px) {
+@media screen and (min-width: 360px) {
   #contenedor-lastMovement__Home {
-    border: 3px solid red;
+ /*    border: 3px solid red; */
     margin-top: 32rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #contenedor-titulo__lastMovement{
+    /* border: 2px solid green; */
+    background-color: rgba(0, 0, 0, 0.875);
+    padding: 1em;
+    border-radius: 6px;
+    width: max-content;
+  }
+
+  #titulo_lastMovement{
+    color: white;
+    font-size: 1.2em;
   }
 }

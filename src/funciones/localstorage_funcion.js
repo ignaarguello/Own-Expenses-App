@@ -40,5 +40,6 @@ export function reiniciar_local_storage() {
     arrayToLocalStorage.push(0)
     localStorage.setItem('dinero_total', JSON.stringify(arrayToLocalStorage))
     sweetAlertRestart()
+    localStorage.setItem('last_movement', 'No hay movimientos previos')
 }
 
