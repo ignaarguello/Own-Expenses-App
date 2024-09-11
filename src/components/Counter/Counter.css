@@ -67,7 +67,7 @@
   #texto-counter::after {
     content: "Balance";
     position: absolute;
-    bottom: -10px; /* Ajusta el valor para controlar el espacio */
+    bottom: 0px; /* Ajusta el valor para controlar el espacio */
     left: 50%;
     transform: translateX(-50%);
     font-size: 13px;

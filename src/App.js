@@ -47,7 +47,7 @@ function App() {
         backgroundSize: "cover",
       }}>
       <TituloExpenses />
-      {/* <GridMenuHome /> */}
+      <GridMenuHome />
       <Counter />
       <LastMovement />
       <MenuFooter />

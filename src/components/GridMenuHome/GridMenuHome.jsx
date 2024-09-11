@@ -15,7 +15,7 @@ export default function GridMenuHome() {
             {/* Contenedor Vertical - Izquierda */}
             <div id="contenedor-vertical-izquierdo_gridMenuHome">
                 <div className="contenedorIconVertical_gridMenuHome">
-                    <MdAddCircleOutline className='icon-menuGridHome' onClick={() => alert('Action more info')} />
+                    <MdAddCircleOutline id='Icon' className='icon-menuGridHome' onClick={() => alert('Action more info')} />
                 </div>
                 <div className="contenedorIconVertical_gridMenuHome">
                     <IoStatsChartSharp className='icon-menuGridHome' onClick={() => alert('Action charts')} />
