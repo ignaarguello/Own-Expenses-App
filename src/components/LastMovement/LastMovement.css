@@ -1,6 +1,7 @@
+/* 360px - Mobile Android */
 @media screen and (min-width: 360px) {
   #contenedor-lastMovement__Home {
- /*    border: 3px solid red; */
+    /*    border: 3px solid red; */
     margin-top: 32rem;
     text-align: center;
     display: flex;
@@ -9,7 +10,7 @@
     width: 100%;
   }
 
-  #contenedor-titulo__lastMovement{
+  #contenedor-titulo__lastMovement {
     /* border: 2px solid green; */
     background-color: rgba(0, 0, 0, 0.875);
     padding: 1em;
@@ -17,8 +18,30 @@
     width: max-content;
   }
 
-  #titulo_lastMovement{
+  #titulo_lastMovement {
     color: white;
     font-size: 1.2em;
+  }
+}
+
+/* 1440px - Macbook y Laptops */
+@media screen and (min-width: 1440px) {
+  #contenedor-lastMovement__Home {
+    /* border: 3px solid red; */
+    margin-top: 88vh;
+  }
+
+  #contenedor-titulo__lastMovement {
+    /* border: 2px solid green; */
+    background-color: rgba(0, 0, 0, 0.875);
+    padding: 1em;
+    border-radius: 6px;
+    width: max-content;
+  }
+
+  #titulo_lastMovement {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 300;
   }
 }
