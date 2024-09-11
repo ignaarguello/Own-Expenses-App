@@ -1,4 +1,6 @@
+/* 360px - Mobile Android */
 @media screen and (min-width: 360px) {
+  /* Contenedor del Contador */
   #contenedor-general-counter {
     /* border: 2px solid blueviolet; */
     position: absolute;
@@ -8,29 +10,68 @@
     color: white;
   }
 
-  #texto-counter{
-      /* border: 2px solid greenyellow; */
-      display: inline-block;
-      background-color: rgba(0, 0, 0, 0.736);
-      backdrop-filter: blur(10px);
-      border-radius: 8px;
-      font-weight: 400;
-      padding: .7rem 3rem;
-      letter-spacing: 1px;
-      font-size: 2.5rem;
+  /** Numero de Contador */
+  #texto-counter {
+    /* border: 2px solid greenyellow; */
+    display: inline-block;
+    border-radius: 8px;
+    font-weight: 400;
+    padding: 0.7rem 3rem;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
   }
 }
 
 /* 414px - Iphone 11 */
 @media screen and (min-width: 414px) {
+  /* Contenedor del Contador */
   #contenedor-general-counter {
     /* border: 2px solid blueviolet; */
     margin-top: 25rem;
   }
 
-  #texto-counter{
-      /* border: 2px solid greenyellow; */
-      padding: .8rem 3.5rem;
-      font-size: 3rem;
+  /** Numero de Contador */
+  #texto-counter {
+    /* border: 2px solid greenyellow; */
+    padding: 0.8rem 3.5rem;
+    font-size: 3rem;
+  }
+}
+
+/* 1440px - Macbook y Laptops */
+@media screen and (min-width: 1440px) {
+  /* Contenedor del Contador */
+  #contenedor-general-counter {
+    margin-top: 14rem;
+    margin-left: 6.8rem;
+    width: 15rem;
+    height: 15rem;
+    background-color: rgba(0, 0, 0, 0.850);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  /** Numero de Contador */
+  #texto-counter {
+    padding: 0.8rem 3.5rem;
+    font-size: 3rem;
+    text-align: center;
+    background-color: transparent;
+    background-color: none;
+    font-weight: 100;
+    position: relative;
+  }
+
+  #texto-counter::after {
+    content: "Balance";
+    position: absolute;
+    bottom: -10px; /* Ajusta el valor para controlar el espacio */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    font-weight: 200;
+    color: white;
   }
 }

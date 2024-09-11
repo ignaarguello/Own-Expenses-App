@@ -11,11 +11,10 @@ import LastMovement from './components/LastMovement/LastMovement';
 import { useEffect, useState } from 'react';
 
 /* Data General */
-import { images_array } from './data/images_background_data';
+import { images_array, images_array2 } from './data/images_background_data';
 
 
 function App() {
-
   /* Hook encargado de crear las propiedades en LS en caso de no existir */
   useEffect(() => {
     let movimientos_storage = localStorage.getItem('movimientos')
@@ -34,21 +33,21 @@ function App() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setContador((prevContador) => (prevContador + 1) % (images_array.length - 1 + 1));
+      setContador((prevContador) => (prevContador + 1) % (images_array2.length - 1 + 1));
     }, 9000);
     return () => clearInterval(intervalId);
-  }, [contador, images_array]);
+  }, [contador, images_array2]);
 
 
   /* JSX del componente */
   return (
     <div className="App" style={
       {
-        backgroundImage: `url(${images_array[contador]})`,
+        backgroundImage: `url(${images_array2[contador]})`,
         backgroundSize: "cover",
       }}>
       <TituloExpenses />
-      <GridMenuHome />
+      {/* <GridMenuHome /> */}
       <Counter />
       <LastMovement />
       <MenuFooter />

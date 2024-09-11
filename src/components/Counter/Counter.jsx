@@ -10,7 +10,6 @@ export default function Counter() {
     if (capital_localstorage) {
       let resultadoReduce = capital_localstorage.reduce((acc, valor) => acc + Number(valor), 0);
       let resultadoFormateado = resultadoReduce.toLocaleString();
-
       setValorCounter(resultadoFormateado)
     }
   }, [])

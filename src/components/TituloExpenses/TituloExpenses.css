@@ -1,8 +1,8 @@
+/* * 360px - Mobiles Android */
 @media screen and (min-width: 360px) {
   #contenedor-tituloExpenses {
     /* border: 2px solid red; */
     position: absolute;
-    margin-top: 5rem;
     width: 70%;
     text-align: center;
     cursor: pointer;
@@ -11,17 +11,8 @@
   #tituloOwnExpenses {
     background-color: rgba(0, 0, 0, 0.904);
     color: white;
-    border-radius: 0px 13px 13px 0px;
     text-transform: uppercase;
     font-size: 1.3rem;
-    padding: 10px;
-  }
-
-  #contenedor-tituloExpenses:hover {
-    width: 100%;
-    transition: all 0.7s ease;
-    border-radius: 1px;
-    cursor: pointer;
   }
 }
 
@@ -31,7 +22,24 @@
   }
 
   #tituloOwnExpenses {
-    background-color: rgba(0, 0, 0, 0.750);
-    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+/* * 1440px - Macbook Air y Laptop */
+@media screen and (min-width: 1440px) {
+  #contenedor-tituloExpenses {
+    height: 4.6rem;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  #tituloOwnExpenses {
+    display: inline;
+    background-color: transparent;
   }
 }
